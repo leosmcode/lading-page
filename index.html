@@ -10,100 +10,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof particlesJS !== 'undefined') {
-                particlesJS('particles-js', {
-                    particles: {
-                        number: {
-                            value: 50,
-                            density: {
-                                enable: true,
-                                value_area: 800
-                            }
-                        },
-                        color: {
-                            value: '#00ff00'
-                        },
-                        shape: {
-                            type: 'line',
-                            stroke: {
-                                width: 1,
-                                color: '#00ff00'
-                            }
-                        },
-                        opacity: {
-                            value: 0.5,
-                            random: true,
-                            anim: {
-                                enable: true,
-                                speed: 1,
-                                opacity_min: 0.1,
-                                sync: false
-                            }
-                        },
-                        size: {
-                            value: 20,
-                            random: true,
-                            anim: {
-                                enable: true,
-                                speed: 2,
-                                size_min: 0.1,
-                                sync: false
-                            }
-                        },
-                        line_linked: {
-                            enable: true,
-                            distance: 150,
-                            color: '#00ff00',
-                            opacity: 0.4,
-                            width: 1
-                        },
-                        move: {
-                            enable: true,
-                            speed: 2,
-                            direction: 'none',
-                            random: true,
-                            straight: false,
-                            out_mode: 'out',
-                            bounce: false,
-                            attract: {
-                                enable: true,
-                                rotateX: 600,
-                                rotateY: 1200
-                            }
-                        }
-                    },
-                    interactivity: {
-                        detect_on: 'canvas',
-                        events: {
-                            onhover: {
-                                enable: true,
-                                mode: 'grab'
-                            },
-                            onclick: {
-                                enable: true,
-                                mode: 'push'
-                            },
-                            resize: true
-                        },
-                        modes: {
-                            grab: {
-                                distance: 140,
-                                line_linked: {
-                                    opacity: 1
-                                }
-                            },
-                            push: {
-                                particles_nb: 4
-                            }
-                        }
-                    },
-                    retina_detect: true
-                });
-            }
-        });
-    </script>
+    
 </head>
 <body>
     <div id="particles-js"></div>
@@ -117,7 +24,7 @@
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
-            <div class="burger" id="burger-menu" aria-label="Menu mobile" role="button" tabindex="0">
+            <div class="burger" id="burger-menu" aria-label="Menu mobile" role="button" tabindex="0" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -292,87 +199,8 @@
         </div>
     </div>
 
-    <script>
-        const text = "Desenvolvedor Web e Suporte em TI";
-        const typingText = document.getElementById('typing-text');
-        let i = 0;
-
-        function typeWriter() {
-            if (i < text.length) {
-                typingText.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-
-        window.onload = function() {
-            typeWriter();
-        }
-
-        // Formulário AJAX com mensagem de agradecimento em modal
-        document.getElementById('contact-form-modern').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const form = e.target;
-            const data = new FormData(form);
-            const endpoint = form.action;
-            
-            try {
-                const response = await fetch(endpoint, {
-                    method: 'POST',
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    form.reset();
-                    const modal = document.getElementById('thankyou-modal-modern');
-                    modal.style.display = 'flex';
-                    modal.setAttribute('aria-hidden', 'false');
-                    
-                    // Focar no modal para acessibilidade
-                    const closeButton = modal.querySelector('.close-modal');
-                    if (closeButton) {
-                        closeButton.focus();
-                    }
-                } else {
-                    throw new Error('Erro na resposta do servidor');
-                }
-            } catch (error) {
-                alert('Ocorreu um erro ao enviar. Tente novamente mais tarde.');
-                console.error('Erro:', error);
-            }
-        });
-
-        // Fechar modal ao clicar no X ou fora do modal
-        document.querySelectorAll('.close-modal').forEach(function(btn) {
-            btn.onclick = function() {
-                const modal = btn.closest('.modal');
-                modal.style.display = 'none';
-                modal.setAttribute('aria-hidden', 'true');
-            };
-        });
-        
-        window.onclick = function(event) {
-            document.querySelectorAll('.modal').forEach(function(modal) {
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                    modal.setAttribute('aria-hidden', 'true');
-                }
-            });
-        };
-
-        // Suporte a teclado para o burger menu
-        document.addEventListener('keydown', function(e) {
-            const burger = document.getElementById('burger-menu');
-            if (e.target === burger && (e.key === 'Enter' || e.key === ' ')) {
-                e.preventDefault();
-                burger.click();
-            }
-        });
-    </script>
-    <script src="script.js"></script>
+    
+    <script src="script.js" defer></script>
 </body>
 </html>
 
