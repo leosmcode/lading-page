@@ -114,6 +114,50 @@ nav {
     width: 100%;
 }
 
+/* Menu Mobile */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    z-index: 1001;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Animação do burger quando ativo */
+.burger.toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Animação para os links do menu mobile */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -183,9 +227,16 @@ nav {
     border: 2px solid var(--primary-color);
 }
 
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
 /* Seções */
 section {
-    padding: 8rem 2rem;
+    padding: 8rem 0;
     position: relative;
 }
 
@@ -204,12 +255,9 @@ section h2 {
 }
 
 .about-content {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     gap: 4rem;
-    padding: 0 2rem;
 }
 
 .about-text {
@@ -222,6 +270,7 @@ section h2 {
     color: var(--dark-bg);
     font-size: 1.1rem;
     line-height: 1.8;
+    margin-bottom: 1rem;
 }
 
 .about-image {
@@ -261,15 +310,12 @@ section h2 {
 .skills {
     background: var(--darker-bg);
     text-align: center;
-    padding: 4rem 2rem;
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .skill-card {
@@ -321,8 +367,6 @@ section h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .project-card {
@@ -557,20 +601,6 @@ footer {
     color: var(--primary-color);
 }
 
-/* Menu Mobile */
-.burger {
-    display: none;
-    cursor: pointer;
-}
-
-.burger div {
-    width: 25px;
-    height: 3px;
-    background-color: var(--primary-color);
-    margin: 5px;
-    transition: all 0.3s ease;
-}
-
 /* WhatsApp Float */
 .whatsapp-float {
     position: fixed;
@@ -604,8 +634,56 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
     .nav-links {
-        display: none;
+        position: fixed;
+        right: 0;
+        top: 70px;
+        height: calc(100vh - 70px);
+        background: rgba(24,24,24,0.98);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 3rem;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 999;
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .nav-links li {
+        opacity: 0;
+        margin: 1rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 1rem;
+        display: block;
+        text-align: center;
+    }
+
+    .burger {
+        display: flex;
+    }
+    
+    .logo {
+        position: static;
+        margin-right: auto;
+    }
+    
+    nav {
+        justify-content: space-between;
+        padding: 1rem 2rem;
     }
     
     .hero-content h1 {
@@ -617,7 +695,7 @@ footer {
     }
     
     section {
-        padding: 4rem 1rem;
+        padding: 4rem 0;
     }
 
     .about-content {
@@ -653,13 +731,77 @@ footer {
     }
 
     .skills-grid {
-        flex-direction: column;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    .skill-card {
+    .project-card {
+        max-width: 100%;
+    }
+
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .btn {
         width: 100%;
-        max-width: 300px;
+        max-width: 250px;
+        text-align: center;
+    }
+
+    .contact-modern-container {
+        flex-direction: column;
+        margin: 0 1rem;
+    }
+    
+    .contact-modern-info h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    section {
+        padding: 3rem 1rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .skill-card {
+        padding: 1rem;
+    }
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .contact-modern-container {
+        flex-direction: column;
+        margin: 0 1rem;
+    }
+    
+    .contact-modern-info,
+    .contact-modern-form {
+        padding: 1.5rem;
     }
 }
 
@@ -766,6 +908,7 @@ footer {
     max-width: 900px;
     width: 100%;
     overflow: hidden;
+    margin: 0 2rem;
 }
 
 .contact-modern-info {
@@ -782,6 +925,7 @@ footer {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     font-weight: 400;
+    text-align: left;
 }
 
 .contact-modern-address,
@@ -815,6 +959,7 @@ footer {
     font-size: 1.1rem;
     border: 1px solid #333;
     transition: background 0.2s, color 0.2s;
+    text-decoration: none;
 }
 
 .contact-modern-social .social-icon:hover {
@@ -845,6 +990,12 @@ footer {
     transition: border 0.2s;
 }
 
+.contact-modern-form input::placeholder,
+.contact-modern-form textarea::placeholder {
+    color: var(--primary-color);
+    opacity: 0.7;
+}
+
 .contact-modern-form input:focus,
 .contact-modern-form textarea:focus {
     border-color: var(--secondary-color);
@@ -854,20 +1005,16 @@ footer {
 .contact-modern-form button {
     width: 100%;
     margin-top: 0.5rem;
-    font-size: 1.1rem;
-    font-weight: 400;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .contact-modern-container {
         flex-direction: column;
-        border-radius: 12px;
+        margin: 0 1rem;
     }
-    .contact-modern-info,
-    .contact-modern-form {
-        padding: 2rem 1rem;
+    
+    .contact-modern-info h2 {
+        text-align: center;
     }
-} 
+}
+

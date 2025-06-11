@@ -3,100 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leonardo Rosa - Desenvolvedor Web e Suporte em TI. Portfólio profissional com projetos e habilidades técnicas.">
+    <meta name="keywords" content="desenvolvedor web, suporte TI, HTML, CSS, JavaScript, formatação computadores">
+    <meta name="author" content="Leonardo Rosa">
     <title>Leonardo Rosa - Portfólio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            particlesJS('particles-js', {
-                particles: {
-                    number: {
-                        value: 50,
-                        density: {
-                            enable: true,
-                            value_area: 800
-                        }
-                    },
-                    color: {
-                        value: '#00ff00'
-                    },
-                    shape: {
-                        type: 'line',
-                        stroke: {
-                            width: 1,
-                            color: '#00ff00'
-                        }
-                    },
-                    opacity: {
-                        value: 0.5,
-                        random: true,
-                        anim: {
-                            enable: true,
-                            speed: 1,
-                            opacity_min: 0.1,
-                            sync: false
-                        }
-                    },
-                    size: {
-                        value: 20,
-                        random: true,
-                        anim: {
-                            enable: true,
-                            speed: 2,
-                            size_min: 0.1,
-                            sync: false
-                        }
-                    },
-                    line_linked: {
-                        enable: true,
-                        distance: 150,
-                        color: '#00ff00',
-                        opacity: 0.4,
-                        width: 1
-                    },
-                    move: {
-                        enable: true,
-                        speed: 2,
-                        direction: 'none',
-                        random: true,
-                        straight: false,
-                        out_mode: 'out',
-                        bounce: false,
-                        attract: {
-                            enable: true,
-                            rotateX: 600,
-                            rotateY: 1200
-                        }
-                    }
-                },
-                interactivity: {
-                    detect_on: 'canvas',
-                    events: {
-                        onhover: {
-                            enable: true,
-                            mode: 'grab'
-                        },
-                        onclick: {
-                            enable: true,
-                            mode: 'push'
-                        },
-                        resize: true
-                    },
-                    modes: {
-                        grab: {
-                            distance: 140,
-                            line_linked: {
-                                opacity: 1
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: {
+                            value: 50,
+                            density: {
+                                enable: true,
+                                value_area: 800
                             }
                         },
-                        push: {
-                            particles_nb: 4
+                        color: {
+                            value: '#00ff00'
+                        },
+                        shape: {
+                            type: 'line',
+                            stroke: {
+                                width: 1,
+                                color: '#00ff00'
+                            }
+                        },
+                        opacity: {
+                            value: 0.5,
+                            random: true,
+                            anim: {
+                                enable: true,
+                                speed: 1,
+                                opacity_min: 0.1,
+                                sync: false
+                            }
+                        },
+                        size: {
+                            value: 20,
+                            random: true,
+                            anim: {
+                                enable: true,
+                                speed: 2,
+                                size_min: 0.1,
+                                sync: false
+                            }
+                        },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: '#00ff00',
+                            opacity: 0.4,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 2,
+                            direction: 'none',
+                            random: true,
+                            straight: false,
+                            out_mode: 'out',
+                            bounce: false,
+                            attract: {
+                                enable: true,
+                                rotateX: 600,
+                                rotateY: 1200
+                            }
                         }
-                    }
-                },
-                retina_detect: true
-            });
+                    },
+                    interactivity: {
+                        detect_on: 'canvas',
+                        events: {
+                            onhover: {
+                                enable: true,
+                                mode: 'grab'
+                            },
+                            onclick: {
+                                enable: true,
+                                mode: 'push'
+                            },
+                            resize: true
+                        },
+                        modes: {
+                            grab: {
+                                distance: 140,
+                                line_linked: {
+                                    opacity: 1
+                                }
+                            },
+                            push: {
+                                particles_nb: 4
+                            }
+                        }
+                    },
+                    retina_detect: true
+                });
+            }
         });
     </script>
 </head>
@@ -104,15 +109,15 @@
     <div id="particles-js"></div>
     <header>
         <nav>
-            <div class="logo">LR</div>
-            <ul class="nav-links">
+            <div class="logo" aria-label="Leonardo Rosa">LR</div>
+            <ul class="nav-links" role="navigation" aria-label="Menu principal">
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
-            <div class="burger" id="burger-menu">
+            <div class="burger" id="burger-menu" aria-label="Menu mobile" role="button" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -124,7 +129,7 @@
         <section id="inicio" class="hero">
             <div class="hero-content">
                 <h1>Leonardo Rosa</h1>
-                <p class="subtitle" id="typing-text"></p>
+                <p class="subtitle" id="typing-text" aria-live="polite"></p>
                 <div class="cta-buttons">
                     <a href="#contato" class="btn primary">Entre em Contato</a>
                     <a href="#sobre" class="btn secondary">Saiba Mais</a>
@@ -133,128 +138,156 @@
         </section>
 
         <section id="sobre" class="about">
-            <h2>Sobre Mim</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Olá! Sou Leonardo Rosa, um desenvolvedor apaixonado por criar soluções digitais inovadoras. Com foco em qualidade e experiência do usuário, busco sempre entregar projetos que façam a diferença.</p>
-                </div>
-                <div class="about-image">
-                    <img src="leonardo.jpg" alt="Leonardo Rosa" class="profile-image">
+            <div class="container">
+                <h2>Sobre Mim</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Olá! Sou Leonardo Rosa, um desenvolvedor apaixonado por criar soluções digitais inovadoras. Com foco em qualidade e experiência do usuário, busco sempre entregar projetos que façam a diferença.</p>
+                        <p>Especializado em desenvolvimento web e suporte técnico, trabalho com as mais modernas tecnologias para criar experiências digitais excepcionais.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="leonardo.jpg" alt="Foto de Leonardo Rosa" class="profile-image">
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="habilidades" class="skills">
-            <h2>Habilidades</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML5</h3>
-                    <p>Desenvolvimento Web</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-css3-alt"></i>
-                    <h3>CSS3</h3>
-                    <p>Estilização e Design</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <h3>JavaScript</h3>
-                    <p>Interatividade</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-laptop"></i>
-                    <h3>Formatação</h3>
-                    <p>Computadores</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-headset"></i>
-                    <h3>Suporte</h3>
-                    <p>Suporte em TI</p>
+            <div class="container">
+                <h2>Habilidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fab fa-html5" aria-hidden="true"></i>
+                        <h3>HTML5</h3>
+                        <p>Desenvolvimento Web</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-css3-alt" aria-hidden="true"></i>
+                        <h3>CSS3</h3>
+                        <p>Estilização e Design</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-code" aria-hidden="true"></i>
+                        <h3>JavaScript</h3>
+                        <p>Interatividade</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-laptop" aria-hidden="true"></i>
+                        <h3>Formatação</h3>
+                        <p>Computadores</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-headset" aria-hidden="true"></i>
+                        <h3>Suporte</h3>
+                        <p>Suporte em TI</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="projetos" class="projects">
-            <h2>Projetos</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="imagens/projeto1.jpg" alt="Projeto 1">
-                    </div>
-                    <div class="project-content">
-                        <h3>Projeto 1</h3>
-                        <p>Descrição do seu primeiro projeto. Aqui você pode falar sobre as tecnologias utilizadas e os desafios superados.</p>
-                        <div class="project-links">
-                            <a href="#" class="demo">Ver Demo</a>
-                            <a href="#" class="code">Ver Código</a>
+            <div class="container">
+                <h2>Projetos</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="imagens/projeto1.jpg" alt="Captura de tela do Projeto 1">
                         </div>
-                    </div>
-                </div>
+                        <div class="project-content">
+                            <h3>Projeto 1</h3>
+                            <p>Descrição do seu primeiro projeto. Aqui você pode falar sobre as tecnologias utilizadas e os desafios superados.</p>
+                            <div class="project-links">
+                                <a href="#" class="demo" aria-label="Ver demonstração do Projeto 1">Ver Demo</a>
+                                <a href="#" class="code" aria-label="Ver código do Projeto 1">Ver Código</a>
+                            </div>
+                        </div>
+                    </article>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="imagens/projeto2.jpg" alt="Projeto 2">
-                    </div>
-                    <div class="project-content">
-                        <h3>Projeto 2</h3>
-                        <p>Descrição do seu segundo projeto. Destaque as principais funcionalidades e tecnologias utilizadas.</p>
-                        <div class="project-links">
-                            <a href="#" class="demo">Ver Demo</a>
-                            <a href="#" class="code">Ver Código</a>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="imagens/projeto2.jpg" alt="Captura de tela do Projeto 2">
                         </div>
-                    </div>
-                </div>
+                        <div class="project-content">
+                            <h3>Projeto 2</h3>
+                            <p>Descrição do seu segundo projeto. Destaque as principais funcionalidades e tecnologias utilizadas.</p>
+                            <div class="project-links">
+                                <a href="#" class="demo" aria-label="Ver demonstração do Projeto 2">Ver Demo</a>
+                                <a href="#" class="code" aria-label="Ver código do Projeto 2">Ver Código</a>
+                            </div>
+                        </div>
+                    </article>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="imagens/projeto3.jpg" alt="Projeto 3">
-                    </div>
-                    <div class="project-content">
-                        <h3>Projeto 3</h3>
-                        <p>Descrição do seu terceiro projeto. Compartilhe os aprendizados e resultados alcançados.</p>
-                        <div class="project-links">
-                            <a href="#" class="demo">Ver Demo</a>
-                            <a href="#" class="code">Ver Código</a>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="imagens/projeto3.jpg" alt="Captura de tela do Projeto 3">
                         </div>
-                    </div>
+                        <div class="project-content">
+                            <h3>Projeto 3</h3>
+                            <p>Descrição do seu terceiro projeto. Compartilhe os aprendizados e resultados alcançados.</p>
+                            <div class="project-links">
+                                <a href="#" class="demo" aria-label="Ver demonstração do Projeto 3">Ver Demo</a>
+                                <a href="#" class="code" aria-label="Ver código do Projeto 3">Ver Código</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
+        
         <section id="contato" class="contact-modern">
-            <div class="contact-modern-container">
-                <div class="contact-modern-info">
-                    <h2>Contate-Nos</h2>
-                    <p class="contact-modern-address">Itajaí - SC</p>
-                    <p class="contact-modern-email"><a href="mailto:leosmrosa@gmail.com">leosmrosa@gmail.com</a></p>
-                    <div class="contact-modern-social">
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <div class="container">
+                <div class="contact-modern-container">
+                    <div class="contact-modern-info">
+                        <h2>Contate-Nos</h2>
+                        <p class="contact-modern-address">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            Itajaí - SC
+                        </p>
+                        <p class="contact-modern-email">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:leosmrosa@gmail.com">leosmrosa@gmail.com</a>
+                        </p>
+                        <div class="contact-modern-social">
+                            <a href="#" class="social-icon" aria-label="Instagram">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                        </div>
                     </div>
+                    <form class="contact-modern-form" id="contact-form-modern" action="https://formspree.io/f/xjkryqde" method="POST">
+                        <input type="text" name="name" placeholder="Nome" required aria-label="Seu nome">
+                        <input type="email" name="email" placeholder="E-mail" required aria-label="Seu e-mail">
+                        <input type="text" name="subject" placeholder="Assunto" required aria-label="Assunto da mensagem">
+                        <textarea name="message" placeholder="Mensagem" rows="4" required aria-label="Sua mensagem"></textarea>
+                        <button type="submit" class="btn primary">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                            Enviar
+                        </button>
+                    </form>
                 </div>
-                <form class="contact-modern-form" id="contact-form-modern" action="https://formspree.io/f/xjkryqde" method="POST">
-                    <input type="text" name="name" placeholder="Nome" required>
-                    <input type="email" name="email" placeholder="E-mail" required>
-                    <input type="text" name="subject" placeholder="Assunto" required>
-                    <textarea name="message" placeholder="Mensagem" rows="4" required></textarea>
-                    <button type="submit" class="btn primary">Enviar</button>
-                </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Leonardo Rosa. Todos os direitos reservados.</p>
+        <div class="container">
+            <p>&copy; 2025 Leonardo Rosa. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
-    <a href="https://wa.me/5547997190249" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/5547997190249" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
-    <div id="thankyou-modal-modern" class="modal">
+    <div id="thankyou-modal-modern" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal" aria-label="Fechar modal">&times;</span>
+            <h3 id="modal-title">Obrigado!</h3>
             <p>Agradecemos o contato e logo entraremos em contato!</p>
         </div>
     </div>
@@ -282,35 +315,64 @@
             const form = e.target;
             const data = new FormData(form);
             const endpoint = form.action;
-            const response = await fetch(endpoint, {
-                method: 'POST',
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
+            
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    form.reset();
+                    const modal = document.getElementById('thankyou-modal-modern');
+                    modal.style.display = 'flex';
+                    modal.setAttribute('aria-hidden', 'false');
+                    
+                    // Focar no modal para acessibilidade
+                    const closeButton = modal.querySelector('.close-modal');
+                    if (closeButton) {
+                        closeButton.focus();
+                    }
+                } else {
+                    throw new Error('Erro na resposta do servidor');
                 }
-            });
-            if (response.ok) {
-                form.reset();
-                document.getElementById('thankyou-modal-modern').style.display = 'flex';
-            } else {
+            } catch (error) {
                 alert('Ocorreu um erro ao enviar. Tente novamente mais tarde.');
+                console.error('Erro:', error);
             }
         });
 
         // Fechar modal ao clicar no X ou fora do modal
         document.querySelectorAll('.close-modal').forEach(function(btn) {
             btn.onclick = function() {
-                btn.closest('.modal').style.display = 'none';
+                const modal = btn.closest('.modal');
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden', 'true');
             };
         });
+        
         window.onclick = function(event) {
             document.querySelectorAll('.modal').forEach(function(modal) {
                 if (event.target === modal) {
                     modal.style.display = 'none';
+                    modal.setAttribute('aria-hidden', 'true');
                 }
             });
         };
+
+        // Suporte a teclado para o burger menu
+        document.addEventListener('keydown', function(e) {
+            const burger = document.getElementById('burger-menu');
+            if (e.target === burger && (e.key === 'Enter' || e.key === ' ')) {
+                e.preventDefault();
+                burger.click();
+            }
+        });
     </script>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
+
